@@ -10,11 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_094353) do
+ActiveRecord::Schema.define(version: 2019_11_26_115207) do
 
   create_table "accounts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "status"
+    t.string "title"
+    t.integer "cost"
+    t.datetime "start"
+    t.text "cancellation_reason"
+    t.boolean "refunded"
+    t.integer "trainer_id"
+    t.integer "schedule_id"
+    t.integer "lesson_id"
+    t.integer "account_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_bookings_on_account_id"
+    t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
+    t.index ["schedule_id"], name: "index_bookings_on_schedule_id"
+    t.index ["trainer_id"], name: "index_bookings_on_trainer_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -29,6 +48,20 @@ ActiveRecord::Schema.define(version: 2019_11_26_094353) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_clients_on_account_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "lesson_payments", force: :cascade do |t|
+    t.string "payment_number"
+    t.string "status"
+    t.date "date"
+    t.integer "cost"
+    t.string "service"
+    t.integer "booking_id"
+    t.integer "account_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_lesson_payments_on_account_id"
+    t.index ["booking_id"], name: "index_lesson_payments_on_booking_id"
   end
 
   create_table "lessons", force: :cascade do |t|

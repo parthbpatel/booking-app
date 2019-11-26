@@ -4,13 +4,13 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.paginate(page: params[:page], per_page: 5).order('sort ASC')
+    @lessons = Lesson.all
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    @lessons = Lesson.paginate(page: params[:page], per_page: 5).order('sort ASC')
+    @lessons = Lesson.all
   end
 
   # GET /lessons/new
