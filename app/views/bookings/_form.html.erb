@@ -1,3 +1,5 @@
+<div class='item form-group'>
+  <div class="col-md-6 col-sm-4 col-xs-6">
 <%= form_with(model: booking, local: true) do |form| %>
   <% if booking.errors.any? %>
     <div id="error_explanation">
@@ -12,56 +14,58 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.label :status %><br>
+    <%= form.text_field :status, class: 'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :cost %>
-    <%= form.number_field :cost %>
+    <%= form.label :cost %><br>
+    <%= form.number_field :cost, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :start %>
-    <%= form.datetime_select :start %>
+    <%= form.label :start %><br>
+    <%= form.datetime_select :start, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :cancellation_reason %>
-    <%= form.text_area :cancellation_reason %>
+    <%= form.label :cancellation_reason %><br>
+    <%= form.text_area :cancellation_reason, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :refunded %>
+    <%= form.label :refunded %><br>
     <%= form.check_box :refunded %>
   </div>
 
   <div class="field">
-    <%= form.label :trainer_id %>
-    <%= form.number_field :trainer_id %>
+    <%= form.label :trainer_id %><br>
+    <%= form.number_field :trainer_id, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :schedule_id %>
-    <%= form.number_field :schedule_id %>
+    <%= form.label :schedule_id %><br>
+    <%= form.number_field :schedule_id, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :lesson_id %>
-    <%= form.number_field :lesson_id %>
+    <%= form.label :lesson_id %><br>
+    <%= form.number_field :lesson_id, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :account_id %>
-    <%= form.number_field :account_id %>
+    <%= form.label :account_id %><br>
+    <%= form.number_field :account_id, class: 'form-control' %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>

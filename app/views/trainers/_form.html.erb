@@ -1,4 +1,6 @@
-<%= form_with(model: trainer, local: true) do |form| %>
+<div class='item form-group'>
+  <div class="col-md-6 col-sm-4 col-xs-6">
+    <%= form_with(model: trainer, local: true) do |form| %>
   <% if trainer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(trainer.errors.count, "error") %> prohibited this trainer from being saved:</h2>
@@ -55,3 +57,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>

@@ -2,6 +2,8 @@
 
 class UsersController < ApplicationController
   before_action :set_lesson, only: [:new]
+  before_action :authenticate_user!
+  protect_from_forgery prepend: true
 
   def new
     @account = Account.new

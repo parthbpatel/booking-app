@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :lesson_payments
-  resources :bookings
-  resources :schedules
-  resources :clients
-  resources :trainers
-  resources :lessons
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :lesson_payments, :bookings, :schedules, :clients, :trainers, :lessons
+
+  root 'home#index'
 end

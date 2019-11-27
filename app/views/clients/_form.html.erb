@@ -1,4 +1,6 @@
-<%= form_with(model: client, local: true) do |form| %>
+<div class='item form-group'>
+  <div class="col-md-6 col-sm-4 col-xs-6">
+    <%= form_with(model: client, local: true) do |form| %>
   <% if client.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
@@ -50,3 +52,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>
